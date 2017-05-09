@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">WashWatchApp</string>
+    <string name="report_a_problem">REPORT A \nPROBLEM</string>
+    <string name="blank_for_now">BLANK FOR NOW</string>
+    <string name="demo">DEMO</string>
+    <string name="machine_status">MACHINE STATUS</string>
 </resources>
