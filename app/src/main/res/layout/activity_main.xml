@@ -10,74 +10,74 @@
     android:orientation="horizontal"
     tools:context="com.bignerdranch.android.washwatchapp.MainActivity">
 
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ww_logo"/>
+    <!--<ImageView-->
+        <!--android:layout_width="400dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/ww_logo"/>-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="124dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/status_btn"
-                android:layout_width="350dp"
-                android:layout_height="200dp"
-                android:background="@color/mainButtonBlue"
-                android:text="@string/machine_status"
-                android:textColor="@color/mainButtonText"
-                android:textSize="34sp"
-                />
-
-            <Button
-                android:layout_width="350dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="16dp"
-                android:background="@color/mainButtonBlue"
-                android:textColor="@color/mainButtonText"
-                android:text="@string/demo"
-                android:textSize="34sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <Button
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:background="@color/mainButtonBlue"
-                android:text="@string/report_a_problem"
-                android:textColor="@color/mainButtonText"
-                android:textSize="34sp"
-                />
-
-            <Button
-                android:layout_width="350dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="16dp"
-                android:background="@color/mainButtonBlue"
-                android:text="@string/blank_for_now"
-                android:textColor="@color/mainButtonText"
-                android:textSize="34sp"
-                />
-        </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical">-->
 
 
-    </LinearLayout>
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginTop="124dp"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<Button-->
+                <!--android:id="@+id/status_btn"-->
+                <!--android:layout_width="350dp"-->
+                <!--android:layout_height="200dp"-->
+                <!--android:background="@color/mainButtonBlue"-->
+                <!--android:text="@string/machine_status"-->
+                <!--android:textColor="@color/mainButtonText"-->
+                <!--android:textSize="34sp"-->
+                <!--/>-->
+
+            <!--<Button-->
+                <!--android:layout_width="350dp"-->
+                <!--android:layout_height="200dp"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:background="@color/mainButtonBlue"-->
+                <!--android:textColor="@color/mainButtonText"-->
+                <!--android:text="@string/demo"-->
+                <!--android:textSize="34sp"-->
+                <!--/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="1">-->
+
+            <!--<Button-->
+                <!--android:layout_width="350dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@color/mainButtonBlue"-->
+                <!--android:text="@string/report_a_problem"-->
+                <!--android:textColor="@color/mainButtonText"-->
+                <!--android:textSize="34sp"-->
+                <!--/>-->
+
+            <!--<Button-->
+                <!--android:layout_width="350dp"-->
+                <!--android:layout_height="200dp"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:background="@color/mainButtonBlue"-->
+                <!--android:text="@string/blank_for_now"-->
+                <!--android:textColor="@color/mainButtonText"-->
+                <!--android:textSize="34sp"-->
+                <!--/>-->
+        <!--</LinearLayout>-->
+
+
+    <!--</LinearLayout>-->
 
 </LinearLayout>

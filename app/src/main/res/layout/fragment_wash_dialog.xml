@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/dialog_container"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_margin="16dp">
+
+
+    <Spinner
+        android:id="@+id/machine_number_spinner"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:entries="@array/machine_numbers"
+        />
+
+    <Spinner
+        android:id="@+id/cycle_spinner"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:entries="@array/wash_cycles" />
+
+    <EditText
+        android:id="@+id/tenant_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/tenant_phone_number"
+        android:inputType="phone"
+        android:textSize="22sp"
+        android:imeOptions="actionDone"
+        />
+
+</LinearLayout>
