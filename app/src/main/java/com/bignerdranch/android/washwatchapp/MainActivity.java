@@ -8,16 +8,16 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mStatusBtn;
+    private Button statusBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mStatusBtn = (Button) findViewById(R.id.status_btn);
+        statusBtn = (Button) findViewById(R.id.status_btn);
 
-        mStatusBtn.setOnClickListener(new View.OnClickListener() {
+        statusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MachineActivity.class);
