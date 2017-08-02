@@ -478,6 +478,18 @@
                 android:textSize="@dimen/machine_text_size"
                 android:textStyle="bold"/>
 
+            <TextView
+                android:id="@+id/machineSevenClock"
+                android:layout_width="154dp"
+                android:layout_height="@dimen/select_btn_height"
+                android:layout_below="@id/machine7"
+                android:layout_centerHorizontal="true"
+                android:background="@color/gray"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="28dp"/>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -515,6 +527,17 @@
                 android:textSize="@dimen/machine_text_size"
                 android:textStyle="bold"/>
 
+            <TextView
+                android:id="@+id/machineEightClock"
+                android:layout_width="154dp"
+                android:layout_height="@dimen/select_btn_height"
+                android:layout_below="@id/machine8"
+                android:layout_centerHorizontal="true"
+                android:background="@color/gray"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="28dp"/>
 
         </RelativeLayout>
 
@@ -554,6 +577,17 @@
                 android:textSize="@dimen/machine_text_size"
                 android:textStyle="bold"/>
 
+            <TextView
+                android:id="@+id/machineNineClock"
+                android:layout_width="154dp"
+                android:layout_height="@dimen/select_btn_height"
+                android:layout_below="@id/machine9"
+                android:layout_centerHorizontal="true"
+                android:background="@color/gray"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="28dp"/>
 
         </RelativeLayout>
 
@@ -593,6 +627,17 @@
                 android:textSize="@dimen/machine_text_size"
                 android:textStyle="bold"/>
 
+            <TextView
+                android:id="@+id/machineTenClock"
+                android:layout_width="154dp"
+                android:layout_height="@dimen/select_btn_height"
+                android:layout_below="@id/machine10"
+                android:layout_centerHorizontal="true"
+                android:background="@color/gray"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="28dp"/>
 
         </RelativeLayout>
 

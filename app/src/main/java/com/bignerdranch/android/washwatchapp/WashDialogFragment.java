@@ -115,14 +115,15 @@ public class WashDialogFragment extends DialogFragment {
 //                        if (washCycleSelection.equals("Select Wash Cycle")) {
 //                            Toast.makeText(getActivity(), "Please select your wash cycle to continue", Toast.LENGTH_SHORT).show();
 //                        }
+
                         tenantPhoneNumber = tenantNumber.getText().toString();
 
 
-                        Intent intent = new Intent(getContext(), MachineActivity.class);
-                        intent.putExtra(MACHINE_NUMBER, machineNumberSelection);
-                        intent.putExtra(WASH_CYCLE_KEY, washCycleSelection);
-                        intent.putExtra(TENANT_PHONE, tenantPhoneNumber);
-                        startActivity(intent);
+//                        Intent intent = new Intent(getContext(), MachineActivity.class);
+//                        intent.putExtra(MACHINE_NUMBER, machineNumberSelection);
+//                        intent.putExtra(WASH_CYCLE_KEY, washCycleSelection);
+//                        intent.putExtra(TENANT_PHONE, tenantPhoneNumber);
+//                        startActivity(intent);
 
 
                     }
@@ -137,7 +138,6 @@ public class WashDialogFragment extends DialogFragment {
     }
 
 
-//
 //    private WashInProgress addNewWash(){
 //        WashInProgress wash = new WashInProgress()
 //
