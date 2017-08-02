@@ -117,8 +117,6 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
                 showDialog();
             }
         });
-        //   washInProgress = new WashInProgress(machineNum, washCycle, tenantPhone);
-
     }
 
 
@@ -147,7 +145,6 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
     private void updateMachineStatus() {
 
         machineNum = WashDialogFragment.machineNumberSelection;
-        washCycle = WashDialogFragment.washCycleSelection;
         tenantPhone = WashDialogFragment.tenantPhoneNumber;
 
         Toast.makeText(getApplicationContext(), "Machine num: " + machineNum, Toast.LENGTH_SHORT).show();
@@ -157,45 +154,65 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
         switch (machineNum) {
             case "1":
                 startMachine(machOneEmpty, machOneFull, machOneClock);
+                startWashTimer(machOneClock);
                 break;
 
             case "2":
                 startMachine(machTwoEmpty, machTwoFull, machTwoClock);
+                startWashTimer(machTwoClock);
                 break;
 
             case "3":
                 startMachine(machThreeEmpty, machThreeFull, machThreeClock);
+                startWashTimer(machThreeClock);
                 break;
 
             case "4":
                 startMachine(machFourEmpty, machFourFull, machFourClock);
+                startWashTimer(machFourClock);
                 break;
 
             case "5":
                 startMachine(machFiveEmpty, machFiveFull, machFiveClock);
+                startWashTimer(machFiveClock);
                 break;
 
             case "6":
                 startMachine(machSixEmpty, machSixFull, machSixClock);
+                startWashTimer(machSixClock);
                 break;
 
             case "7":
                 startMachine(machSevenEmpty, machSevenFull, machSevenClock);
+                startWashTimer(machSevenClock);
                 break;
 
             case "8":
                 startMachine(machEightEmpty, machEightFull, machEightClock);
+                startWashTimer(machEightClock);
                 break;
 
             case "9":
                 startMachine(machNineEmpty, machNineFull, machNineClock);
+                startWashTimer(machNineClock);
                 break;
 
             case "10":
                 startMachine(machTenEmpty, machTenFull, machTenClock);
+                startWashTimer(machTenClock);
                 break;
         }
+    }
 
+
+    private void startWashTimer(TextView timerTextView) {
+        washCycle = WashDialogFragment.washCycleSelection;
+
+        if (washCycle.equals("Regular Cycle")) {
+            setRegularTimer(timerTextView);
+        } else {
+            setSuperTimer(timerTextView);
+        }
     }
 
     private void startMachine(ImageView machineEmpty, ImageView machineFull, TextView machineClock) {
@@ -205,7 +222,7 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
     }
 
 
-    public void setRegularTimer(final TextView textView) {
+    private void setRegularTimer(final TextView textView) {
         CountDownTimer regularCycleTimer = new CountDownTimer(60000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -219,6 +236,19 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
         }.start();
     }
 
+    private void setSuperTimer(final TextView textView) {
+        CountDownTimer regularCycleTimer = new CountDownTimer(80000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                textView.setText(millisUntilFinished / 1000 + " MIN");
+            }
+
+            @Override
+            public void onFinish() {
+                textView.setText("DONE");
+            }
+        }.start();
+    }
 
 }
 
