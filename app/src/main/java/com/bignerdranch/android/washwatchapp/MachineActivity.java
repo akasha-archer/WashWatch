@@ -156,86 +156,68 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
 
         switch (machineNum) {
             case "1":
-                machOneEmpty.setVisibility(View.INVISIBLE);
-                machOneFull.setVisibility(View.VISIBLE);
-                machOneClock.setText("wash");
+                startMachine(machOneEmpty, machOneFull, machOneClock);
                 break;
 
             case "2":
-                machTwoEmpty.setVisibility(View.INVISIBLE);
-                machTwoFull.setVisibility(View.VISIBLE);
-                machTwoClock.setText("wash");
+                startMachine(machTwoEmpty, machTwoFull, machTwoClock);
                 break;
 
             case "3":
-                machThreeEmpty.setVisibility(View.INVISIBLE);
-                machThreeFull.setVisibility(View.VISIBLE);
-                machThreeClock.setText("wash");
+                startMachine(machThreeEmpty, machThreeFull, machThreeClock);
                 break;
 
             case "4":
-                machFourEmpty.setVisibility(View.INVISIBLE);
-                machFourFull.setVisibility(View.VISIBLE);
-                machFourClock.setText("wash");
+                startMachine(machFourEmpty, machFourFull, machFourClock);
                 break;
 
             case "5":
-                machFiveEmpty.setVisibility(View.INVISIBLE);
-                machFiveFull.setVisibility(View.VISIBLE);
-                machFiveClock.setText("wash");
+                startMachine(machFiveEmpty, machFiveFull, machFiveClock);
                 break;
 
             case "6":
-                machSixEmpty.setVisibility(View.INVISIBLE);
-                machSixFull.setVisibility(View.VISIBLE);
-                machSixClock.setText("wash");
+                startMachine(machSixEmpty, machSixFull, machSixClock);
                 break;
 
             case "7":
-                machSevenEmpty.setVisibility(View.INVISIBLE);
-                machSevenFull.setVisibility(View.VISIBLE);
-                machSevenClock.setText("wash");
+                startMachine(machSevenEmpty, machSevenFull, machSevenClock);
                 break;
 
             case "8":
-                machEightEmpty.setVisibility(View.INVISIBLE);
-                machEightFull.setVisibility(View.VISIBLE);
-                machEightClock.setText("wash");
+                startMachine(machEightEmpty, machEightFull, machEightClock);
                 break;
 
             case "9":
-                machNineEmpty.setVisibility(View.INVISIBLE);
-                machNineFull.setVisibility(View.VISIBLE);
-                machNineClock.setText("wash");
+                startMachine(machNineEmpty, machNineFull, machNineClock);
                 break;
 
             case "10":
-                machTenEmpty.setVisibility(View.INVISIBLE);
-                machTenFull.setVisibility(View.VISIBLE);
-                machTenClock.setText("wash");
+                startMachine(machTenEmpty, machTenFull, machTenClock);
                 break;
-
         }
 
     }
 
+    private void startMachine(ImageView machineEmpty, ImageView machineFull, TextView machineClock) {
+        machineEmpty.setVisibility(View.INVISIBLE);
+        machineFull.setVisibility(View.VISIBLE);
+        machineClock.setText("wash");
+    }
 
-//    public void setRegularTimer() {
-//        CountDownTimer regularCycleTimer = new CountDownTimer(2100000, 1000) {
-//            @Override
-//            public void onTick(long millisUntilFinished) {
-//
-//            }
-//
-//            @Override
-//            public void onFinish() {
-//
-//            }
-//        }
-//
-//
-//    }
 
+    public void setRegularTimer(final TextView textView) {
+        CountDownTimer regularCycleTimer = new CountDownTimer(60000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                textView.setText(millisUntilFinished / 1000 + " MIN");
+            }
+
+            @Override
+            public void onFinish() {
+                textView.setText("DONE");
+            }
+        }.start();
+    }
 
 
 }
