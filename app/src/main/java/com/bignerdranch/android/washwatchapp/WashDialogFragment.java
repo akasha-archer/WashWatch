@@ -1,6 +1,7 @@
 package com.bignerdranch.android.washwatchapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -115,6 +116,15 @@ public class WashDialogFragment extends DialogFragment {
 //                            Toast.makeText(getActivity(), "Please select your wash cycle to continue", Toast.LENGTH_SHORT).show();
 //                        }
                         tenantPhoneNumber = tenantNumber.getText().toString();
+
+
+                        Intent intent = new Intent(getContext(), MachineActivity.class);
+                        intent.putExtra(MACHINE_NUMBER, machineNumberSelection);
+                        intent.putExtra(WASH_CYCLE_KEY, washCycleSelection);
+                        intent.putExtra(TENANT_PHONE, tenantPhoneNumber);
+                        startActivity(intent);
+
+
                     }
                 })
                 // negative button

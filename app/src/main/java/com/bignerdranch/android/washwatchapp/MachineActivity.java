@@ -1,5 +1,6 @@
 package com.bignerdranch.android.washwatchapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
@@ -19,16 +20,18 @@ import butterknife.ButterKnife;
 
 public class MachineActivity extends AppCompatActivity implements WashDialogFragment.WashDialogListener {
 
-    String diaTitle = "SELECT SOMETHING";
-    WashInProgress washInProgress;
-    String machineNum = WashDialogFragment.machineNumberSelection;
-    String washCycle =  WashDialogFragment.washCycleSelection;
-    String tenantPhone = WashDialogFragment.tenantPhoneNumber;
+    private String diaTitle = "SELECT SOMETHING";
+    private WashInProgress washInProgress;
+    private String machineNum;
+    private String washCycle;
+    private String tenantPhone;
 
     private static final String DIALOG_TITLE = "SELECT SOMETHING";
 
-    @BindView(R.id.selectMachine) Button selectMachine;
-    @BindView(R.id.machineOneClock) TextView machOneClock;
+    @BindView(R.id.selectMachine)
+    Button selectMachine;
+    @BindView(R.id.machineOneClock)
+    TextView machOneClock;
 
 
     @Override
@@ -41,9 +44,15 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
         selectMachine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               showDialog();
+                showDialog();
             }
         });
+
+        Intent washIntent = getIntent();
+        machineNum = washIntent.getStringExtra(WashDialogFragment.MACHINE_NUMBER);
+        washCycle = washIntent.getStringExtra(WashDialogFragment.WASH_CYCLE_KEY);
+        tenantPhone = washIntent.getStringExtra(WashDialogFragment.TENANT_PHONE);
+
 
         washInProgress = new WashInProgress(machineNum, washCycle, tenantPhone);
     }
@@ -59,7 +68,9 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
     public void onDialogPositiveClick(DialogFragment dialog) {
         // User touched the dialog's positive button
         Log.i("FragmentAlertDialog", "Positive click!");
-        Toast.makeText(getApplicationContext(), WashDialogFragment.machineNumberSelection, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Extra pickup " + machineNum, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Wash Cycle " + washCycle, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Phone: " + tenantPhone, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -69,9 +80,6 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
         Toast.makeText(getApplicationContext(), "Transaction Cancelled", Toast.LENGTH_SHORT).show();
 
     }
-
-
-
 
 
 }
