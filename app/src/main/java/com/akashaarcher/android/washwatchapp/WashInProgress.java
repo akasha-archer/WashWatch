@@ -1,4 +1,4 @@
-package com.bignerdranch.android.washwatchapp;
+package com.akashaarcher.android.washwatchapp;
 
 /**
  * Created by Akasha on 5/11/17.

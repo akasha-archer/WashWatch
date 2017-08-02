@@ -8,7 +8,7 @@
     android:layout_gravity="center_horizontal"
     android:layout_marginLeft="16dp"
     android:orientation="horizontal"
-    tools:context="com.bignerdranch.android.washwatchapp.MainActivity">
+    tools:context="com.akashaarcher.android.washwatchapp.MainActivity">
 
     <!--<ImageView-->
         <!--android:layout_width="400dp"-->

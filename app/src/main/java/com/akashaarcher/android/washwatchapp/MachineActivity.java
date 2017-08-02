@@ -1,6 +1,5 @@
-package com.bignerdranch.android.washwatchapp;
+package com.akashaarcher.android.washwatchapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.DialogFragment;
@@ -251,9 +250,3 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
     }
 
 }
-
-
-//  Intent washIntent = getIntent();
-//  machineNum = washIntent.getStringExtra(WashDialogFragment.MACHINE_NUMBER);
-//  washCycle = washIntent.getStringExtra(WashDialogFragment.WASH_CYCLE_KEY);
-//  tenantPhone = washIntent.getStringExtra(WashDialogFragment.TENANT_PHONE);

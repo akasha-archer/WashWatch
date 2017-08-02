@@ -1,7 +1,6 @@
-package com.bignerdranch.android.washwatchapp;
+package com.akashaarcher.android.washwatchapp;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -117,14 +116,6 @@ public class WashDialogFragment extends DialogFragment {
 //                        }
 
                         tenantPhoneNumber = tenantNumber.getText().toString();
-
-
-//                        Intent intent = new Intent(getContext(), MachineActivity.class);
-//                        intent.putExtra(MACHINE_NUMBER, machineNumberSelection);
-//                        intent.putExtra(WASH_CYCLE_KEY, washCycleSelection);
-//                        intent.putExtra(TENANT_PHONE, tenantPhoneNumber);
-//                        startActivity(intent);
-
 
                     }
                 })

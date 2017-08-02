@@ -1,4 +1,4 @@
-package com.bignerdranch.android.washwatchapp;
+package com.akashaarcher.android.washwatchapp;
 
 import org.junit.Test;
 
