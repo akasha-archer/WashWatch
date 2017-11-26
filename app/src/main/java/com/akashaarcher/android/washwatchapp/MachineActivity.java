@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -26,7 +29,7 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
 
     private WashInProgress washInProgress;
     private String machineNum = "";
-    private String washCycle = "";
+    private String washCycle = WashDialogFragment.washCycleSelection;    //"";
     private String tenantPhone = "";
 
     @BindView(R.id.selectMachine)
@@ -130,7 +133,6 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
     public void onDialogPositiveClick(DialogFragment dialog) {
         // User touched the dialog's positive button
         Log.i("FragmentAlertDialog", "Positive click!");
-
         updateMachineStatus();
     }
 
@@ -154,58 +156,68 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
             case "1":
                 startMachine(machOneEmpty, machOneFull, machOneClock);
                 startWashTimer(machOneClock);
+                washMe();
                 break;
 
             case "2":
                 startMachine(machTwoEmpty, machTwoFull, machTwoClock);
                 startWashTimer(machTwoClock);
+                washMe();
                 break;
 
             case "3":
                 startMachine(machThreeEmpty, machThreeFull, machThreeClock);
                 startWashTimer(machThreeClock);
+                washMe();
                 break;
 
             case "4":
                 startMachine(machFourEmpty, machFourFull, machFourClock);
                 startWashTimer(machFourClock);
+                washMe();
                 break;
 
             case "5":
                 startMachine(machFiveEmpty, machFiveFull, machFiveClock);
                 startWashTimer(machFiveClock);
+                washMe();
                 break;
 
             case "6":
                 startMachine(machSixEmpty, machSixFull, machSixClock);
                 startWashTimer(machSixClock);
+                washMe();
                 break;
 
             case "7":
                 startMachine(machSevenEmpty, machSevenFull, machSevenClock);
                 startWashTimer(machSevenClock);
+                washMe();
                 break;
 
             case "8":
                 startMachine(machEightEmpty, machEightFull, machEightClock);
                 startWashTimer(machEightClock);
+                washMe();
                 break;
 
             case "9":
                 startMachine(machNineEmpty, machNineFull, machNineClock);
                 startWashTimer(machNineClock);
+                washMe();
                 break;
 
             case "10":
                 startMachine(machTenEmpty, machTenFull, machTenClock);
                 startWashTimer(machTenClock);
+                washMe();
                 break;
         }
     }
 
 
     private void startWashTimer(TextView timerTextView) {
-        washCycle = WashDialogFragment.washCycleSelection;
+    //    washCycle = WashDialogFragment.washCycleSelection;
 
         if (washCycle.equals("Regular Cycle")) {
             setRegularTimer(timerTextView);
@@ -248,5 +260,16 @@ public class MachineActivity extends AppCompatActivity implements WashDialogFrag
             }
         }.start();
     }
+
+
+    private void addNewWash(WashInProgress newWash){
+        List<WashInProgress> washInProgress = new ArrayList<>();
+        washInProgress.add(newWash);
+    }
+
+    private void washMe() {
+        addNewWash(new WashInProgress(machineNum, washCycle, tenantPhone));
+    }
+
 
 }

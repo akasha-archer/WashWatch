@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ import java.util.Queue;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 
 /**
  * Created by Akasha on 5/11/17.
@@ -107,26 +109,56 @@ public class WashDialogFragment extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        mListener.onDialogPositiveClick(WashDialogFragment.this);
-//                        if (machineNumberSelection.equals("Select Machine Number")) {
-//                            Toast.makeText(getActivity(), "Please select your machine number to continue", Toast.LENGTH_SHORT).show();
-//                        }
-//                        if (washCycleSelection.equals("Select Wash Cycle")) {
-//                            Toast.makeText(getActivity(), "Please select your wash cycle to continue", Toast.LENGTH_SHORT).show();
-//                        }
-
-                        tenantPhoneNumber = tenantNumber.getText().toString();
-
                     }
                 })
                 // negative button
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        mListener.onDialogNegativeClick(WashDialogFragment.this);
+                        listener.onDialogNegativeClick(WashDialogFragment.this);
                     }
                 })
                 .create();
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        final AlertDialog dialog = (AlertDialog)getDialog();
+
+        Button positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
+        positiveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View onClick) {
+
+                tenantPhoneNumber = tenantNumber.getText().toString();
+
+                if (machineNumberSelection.equals("Select Machine Number")) {
+                    Toast.makeText(getActivity(), "Please select your machine number to continue", Toast.LENGTH_SHORT).show();
+                }
+                if (washCycleSelection.equals("Select Wash Cycle")) {
+                    Toast.makeText(getActivity(), "Please select your wash cycle to continue", Toast.LENGTH_SHORT).show();
+                }
+                if (tenantPhoneNumber.isEmpty()) {
+                    Toast.makeText(getActivity(), "Please enter your phone number to continue", Toast.LENGTH_SHORT).show();
+                } else if ((!tenantPhoneNumber.isEmpty()) && (!machineNumberSelection.equals("Select Machine Number"))
+                        && (!washCycleSelection.equals("Select Wash Cycle"))) {
+                    listener.onDialogPositiveClick(WashDialogFragment.this);
+                    dialog.dismiss();
+                }
+
+//                newTaskEntry = newItemEntry.getText().toString();
+//                if (newTaskEntry.isEmpty()) {
+//                    Toast.makeText(getActivity(), "Please enter a task", Toast.LENGTH_SHORT).show();
+//                } else if (!newTaskEntry.isEmpty()){
+//                    newItemDialogListener.onDialogPositiveClick(NewItemDialogFragment.this);
+//                    dialog.dismiss();
+//                }
+
+            }
+        });
+    }
+
 
 
 //    private WashInProgress addNewWash(){
@@ -139,7 +171,7 @@ public class WashDialogFragment extends DialogFragment {
         public void onDialogNegativeClick(DialogFragment dialog);
     }
 
-    WashDialogListener mListener;
+    WashDialogListener listener;
 
 
     // Override the Fragment.onAttach() method to instantiate the NoticeDialogListener
@@ -149,7 +181,7 @@ public class WashDialogFragment extends DialogFragment {
         // Verify that the host activity implements the callback interface
         try {
             // Instantiate the NoticeDialogListener so we can send events to the host
-            mListener = (WashDialogListener) activity;
+            listener = (WashDialogListener) activity;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
             throw new ClassCastException(activity.toString()
